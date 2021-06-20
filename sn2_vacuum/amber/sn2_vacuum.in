@@ -1,0 +1,64 @@
+! sander -O -i md.in -o md.out -r system.rst -x md.crd -frc md.frc -inf md.info -p system.prmtop -c system.inpcrd
+
+&cntrl
+  ! General options.
+  imin=0,                   ! Run MD without minimization.
+  ntx=1,                    ! Read coordinates but no velocities.
+  irest=0,                  ! Do not restart, this is a new simulation.
+
+  ! Output configuration.
+  ntwr=2000,                ! Save restart file every 1 ps.
+  ntpr=200,                 ! Append/save to mdout/mdinfo energy information every 100 fs.
+  ntwx=100,                 ! Append to mdcrd the coordinates every 50.0 fs.
+  ntwf=100,                 ! Append to mdfrc the forces every 50.0 fs.
+  ioutfm=1,                 ! mdcrd in netcdf format (default is 1).
+  idecomp=0,                ! Do not decompose energy (default is 0). This might be handy for the explicit solvent simulation.
+
+  ! MD options.
+  nstlim=210000000,         ! Total number of MD steps (105.0 ns, the first 5.0 ns is discarded).
+  nscm=1000,                ! Recenter center of mass after 0.5 ps (default is 1000).
+  dt=0.0005,                ! Time step in ps.
+
+  ! Temperature.
+  ntt=3,                    ! Use langevin dynamics to control temperature.
+  temp0=300,                ! Temperature in Kelvin.
+  tempi=300,                ! Initial velocities are drawn from Maxwellian distribution at 300K.
+  gamma_ln=1.0,             ! Collision frequency of Langevin dynamics in 1/ps.
+  ig=-1,                    ! Seed based on current date and time.
+  vlimit=20,                ! Truncate any component of the velocity above 20 (default is 20). A warning is printed when this happens.
+
+  ! Pressure.
+  ntp=0,                    ! No pressure control in vacuum. This section needs revision in explicit solvent.
+
+  ! SHAKE.
+  ntc=1,                    ! Do not perform SHAKE with QM simulations (unless equilibrium bond lengths are good enough).
+
+  ! Potential parameters.
+  ntf=1,                    ! Use all forces for dynamics (change if you SHAKE some bonds).
+  !ntb=0,                    ! Turn off periodic boundary conditions in vacuum.
+  igb=6,                    ! Vacuum calculation. Automatically sets ntb to 0 to remove periodic boundary conditions.
+  !cut=9999,                 ! Nonbonded/PME cutoff in Angstroms (default is 9999 for vacuum/implicit solvent calculations).
+  ifqnt=1,                  ! Flag for QM calculation.
+
+  ! PLUMED.
+  plumed=1,                 ! Flag for using plumed.
+  plumedfile='plumed.dat',  ! Path to PLUMED script file.
+/
+
+&qmmm
+  qmmask='@1-6',            ! Include in the QM region the first 6 atoms.
+  qm_theory='PM6',          ! Use PM6 semi-empirical Hamiltonian.
+  qmcharge=-1,              ! Total charge of the QM system.
+  qmmm_int=1,               ! Standard electrostatic embedding without repulsion correction with LJ WdV for QM/MM (nothing in vacuum).
+
+  !qmcut=9999,               ! Electrostatic cutoff between MM atom and ANY QM atom for the QM/MM interactions (default is the same as "cut").
+  !qm_ewald=0,               ! No Ewald for non-periodic simulations. By default it uses PME only if classical uses it too.
+  !qm_pme=1,                 ! Use the QM-compatible PME rather than Ewald sums (default with qm_ewald=1).
+  !qmmm_switch=1,            ! Use switching function to avoid discontinuities at Ewald cutoff (default is 0).
+
+  ! Things to consider for later experiments.
+  !verbosity=4,              ! Print forces on the QM atoms at every step (among A LOT of other stuff).
+  !qxd=.true.,               ! Turn on the charge-dependent exchange-dispersion correction of VdW interaction.
+  !qmshake=0,                ! Do not shake hydrogen atoms. By default it shakes them only if ntc > 1.
+  !vsolv=0,                  ! Do not include solvent molecule in the QM region with adaptive schemes.
+/

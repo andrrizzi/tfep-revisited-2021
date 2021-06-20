@@ -1,0 +1,68 @@
+TITLE     MDANALYSIS FRAMES FROM 0, STEP 1: Created by PDBWriter
+CRYST1    0.000    0.000    0.000   0.00   0.00   0.00 P 1           1
+MODEL        1
+ATOM      1  C1  MOL S   1       0.000   0.000   0.000  1.00  0.00      SYST C
+ATOM      2  Cl1 MOL S   1       0.424  -3.636   0.518  1.00  0.00      SYSTCL
+ATOM      3  H1  MOL S   1      -0.000   0.000   1.058  1.00  0.00      SYST H
+ATOM      4  H2  MOL S   1      -1.027  -0.000  -0.390  1.00  0.00      SYST H
+ATOM      5  H3  MOL S   1       0.556  -0.880  -0.359  1.00  0.00      SYST H
+ATOM      6  F1  MOL S   2       0.647   1.063  -0.443  1.00  0.00      SYST F
+ENDMDL
+CONECT    1    2    3    4    5
+CONECT    2    1
+CONECT    3    1
+CONECT    4    1
+CONECT    5    1
+MODEL        2
+ATOM      1  C1  MOL S   1       0.000   0.000   0.000  1.00  0.00      SYST C
+ATOM      2  Cl1 MOL S   1      -0.294   2.047  -0.228  1.00  0.00      SYSTCL
+ATOM      3  H1  MOL S   1       0.000  -0.000   1.041  1.00  0.00      SYST H
+ATOM      4  H2  MOL S   1       1.070   0.000  -0.478  1.00  0.00      SYST H
+ATOM      5  H3  MOL S   1      -0.972  -0.086  -0.598  1.00  0.00      SYST H
+ATOM      6  F1  MOL S   2       0.070  -1.662   0.105  1.00  0.00      SYST F
+ENDMDL
+CONECT    1    2    3    4    5
+CONECT    2    1
+CONECT    3    1
+CONECT    4    1
+CONECT    5    1
+MODEL        3
+ATOM      1  C1  MOL S   1       0.000   0.000   0.000  1.00  0.00      SYST C
+ATOM      2  Cl1 MOL S   1       1.286   1.964   1.530  1.00  0.00      SYSTCL
+ATOM      3  H1  MOL S   1       0.000   0.000   1.158  1.00  0.00      SYST H
+ATOM      4  H2  MOL S   1       1.012  -0.000  -0.273  1.00  0.00      SYST H
+ATOM      5  H3  MOL S   1      -0.758   0.732  -0.174  1.00  0.00      SYST H
+ATOM      6  F1  MOL S   2      -0.549  -1.159  -0.709  1.00  0.00      SYST F
+ENDMDL
+CONECT    1    2    3    4    5
+CONECT    2    1
+CONECT    3    1
+CONECT    4    1
+CONECT    5    1
+MODEL        4
+ATOM      1  C1  MOL S   1       0.000   0.000   0.000  1.00  0.00      SYST C
+ATOM      2  Cl1 MOL S   1       0.581   2.351   0.180  1.00  0.00      SYSTCL
+ATOM      3  H1  MOL S   1       0.000   0.000   1.096  1.00  0.00      SYST H
+ATOM      4  H2  MOL S   1       1.025   0.000  -0.356  1.00  0.00      SYST H
+ATOM      5  H3  MOL S   1      -0.850   0.354  -0.618  1.00  0.00      SYST H
+ATOM      6  F1  MOL S   2      -0.500  -1.548   0.035  1.00  0.00      SYST F
+ENDMDL
+CONECT    1    2    3    4    5
+CONECT    2    1
+CONECT    3    1
+CONECT    4    1
+CONECT    5    1
+MODEL        5
+ATOM      1  C1  MOL S   1       0.000   0.000   0.000  1.00  0.00      SYST C
+ATOM      2  Cl1 MOL S   1       0.588   2.669   1.959  1.00  0.00      SYSTCL
+ATOM      3  H1  MOL S   1       0.000   0.000   1.133  1.00  0.00      SYST H
+ATOM      4  H2  MOL S   1       0.978  -0.000  -0.503  1.00  0.00      SYST H
+ATOM      5  H3  MOL S   1      -0.628   0.827  -0.399  1.00  0.00      SYST H
+ATOM      6  F1  MOL S   2      -0.443  -1.248  -0.373  1.00  0.00      SYST F
+ENDMDL
+CONECT    1    2    3    4    5
+CONECT    2    1
+CONECT    3    1
+CONECT    4    1
+CONECT    5    1
+END
