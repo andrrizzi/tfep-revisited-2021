@@ -9,6 +9,11 @@ To load the same conda environment used during the analysis published in the pap
 conda env create -f conda_environment.yml
 ```
 
+Finally, to run the analysis code execute
+```
+python sn2_reaction.py -d "amber/repeat-0" -l "kl" --lr=0.001 --clrmin=0.0001 -b 256 -y 12 -w 0.001 -a "expensive2" -t 70000 --weightnorm -o "../sn2_vacuum/trp/kl-lr0001-clrmin00001-b256-y8-w0001-expensive2-wnorm-t70000" -p -e 280 --aepochs=1,280
+```
+
 ## Manifest
 
 - `double_well.py`: Perform the standard and targeted FEP analysis of the double-well potential example..
