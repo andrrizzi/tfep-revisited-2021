@@ -710,7 +710,7 @@ def train_step(batch, flow, loss_func, optimizer, target_p, inverse=False, cv_bo
 
 def _sample_util(p, p_sample, n_samples, input_bounds=None):
     if p_sample is None:
-        return p1.sample((n_samples,), input_bounds=input_bounds)
+        return p.sample((n_samples,), input_bounds=input_bounds)
     return p_sample.sample((n_samples,), input_bounds=input_bounds)
 
 
